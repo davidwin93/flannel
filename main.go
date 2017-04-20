@@ -48,6 +48,7 @@ import (
 	_ "github.com/coreos/flannel/backend/udp"
 	_ "github.com/coreos/flannel/backend/vxlan"
 	"github.com/coreos/go-systemd/daemon"
+	_ "github.com/davidwin93/flannel/backend/hybrid"
 )
 
 type CmdLineOpts struct {
