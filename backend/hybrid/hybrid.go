@@ -3,11 +3,10 @@ package hybrid
 import (
 	"fmt"
 
-	"golang.org/x/net/context"
-
 	"github.com/coreos/flannel/backend"
 	"github.com/coreos/flannel/pkg/ip"
 	"github.com/coreos/flannel/subnet"
+	"golang.org/x/net/context"
 )
 
 func init() {
@@ -22,6 +21,7 @@ type HybridBackend struct {
 	sm       subnet.Manager
 	extIface *backend.ExternalInterface
 	networks map[string]*network
+	extra    string
 }
 
 func New(sm subnet.Manager, extIface *backend.ExternalInterface) (backend.Backend, error) {

@@ -27,6 +27,7 @@ type network struct {
 	rl        []netlink.Route
 	lease     *subnet.Lease
 	sm        subnet.Manager
+	diff      string
 }
 
 func (n *network) Lease() *subnet.Lease {

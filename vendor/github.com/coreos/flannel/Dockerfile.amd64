@@ -1,0 +1,12 @@
+FROM frolvlad/alpine-glibc
+
+MAINTAINER Tom Denham <tom@tigera.io>
+
+ENV FLANNEL_ARCH=amd64
+
+COPY dist/flanneld-$FLANNEL_ARCH /opt/bin/flanneld
+COPY dist/iptables-$FLANNEL_ARCH /usr/local/bin/iptables
+COPY dist/mk-docker-opts.sh /opt/bin/
+
+ENTRYPOINT ["/opt/bin/flanneld"]
+
